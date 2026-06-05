@@ -4,84 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大人の自由旅グループ募集</title>
-    <!-- デザインを綺麗に整えるための合図 -->
-   <script src="https://jsdelivr.net"></script>
+    <!-- 100%確実に色をつけるためのシンプルな設定 -->
+    <style>
+        body { background-color: #f5f5f4; color: #292524; font-family: sans-serif; margin: 0; padding: 0; }
+        header { background-color: #065f46; color: #ffffff; padding: 40px 20px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        h1 { margin: 0 0 10px 0; font-size: 28px; }
+        .sub-title { margin: 0; font-size: 14px; color: #d1fae5; }
+        main { max-width: 600px; margin: 30px auto; padding: 0 20px; }
+        section { background-color: #ffffff; padding: 25px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e7e5e4; margin-bottom: 25px; }
+        h2 { margin: 0 0 15px 0; font-size: 18px; color: #065f46; border-bottom: 2px solid #e7e5e4; padding-bottom: 8px; }
+        p { font-size: 13px; line-height: 1.6; margin: 0 0 15px 0; }
+        .qna-box { background-color: #ecfdf5; padding: 15px; border-radius: 8px; border: 1px solid #a7f3d0; color: #065f46; font-weight: bold; font-size: 13px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px; color: #444; }
+        input[type="text"], input[type="number"], input[type="email"], textarea { width: 100%; padding: 10px; font-size: 13px; border-radius: 8px; border: 1px solid #d1d5db; box-sizing: border-box; }
+        .form-group { margin-bottom: 15px; }
+        .rule-bg { background-color: #f5f5f4; padding: 20px; border-radius: 12px; border: 1px solid #e7e5e4; }
+        .rule-title { font-size: 13px; font-weight: bold; color: #065f46; border-bottom: 1px solid #d6d3d1; padding-bottom: 5px; margin: 0 0 15px 0; }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 12px; color: #444; line-height: 1.5; }
+        .checkbox-group input { margin-top: 3px; }
+        footer { background-color: #1f2937; color: #9ca3af; text-align: center; padding: 20px; font-size: 12px; margin-top: 50px; }
+        button { width: 100%; padding: 14px; font-size: 13px; font-weight: bold; border-radius: 8px; border: none; cursor: not-allowed; background-color: #a8a29e; color: #ffffff; transition: 0.2s; }
+    </style>
 </head>
-<body class="bg-amber-50 text-gray-800 antialiased min-h-screen">
+<body>
 
-    <!-- 画面上の深緑の看板エリア -->
-    <header class="bg-green-800 text-white py-12 px-6 text-center shadow-md">
-        <h1 class="text-2xl md:text-3xl font-bold mb-2">大人のコスパ自由旅グループ</h1>
-        <p class="text-xs text-green-100">平日昼間に対面で相談して創り上げる旅仲間募集</p>
+    <header>
+        <h1>大人のコスパ自由旅グループ</h1>
+        <p class="sub-title">平日昼間に対面で相談して創り上げる旅仲間募集</p>
     </header>
 
-    <main class="max-w-3xl mx-auto py-8 px-4 space-y-6">
-        <!-- プロフィール -->
-        <section class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-            <h2 class="font-bold text-green-800 border-b pb-2 mb-3">👤 代表者紹介 ＆ 設立のきっかけ</h2>
-            <p class="text-xs text-gray-700 leading-relaxed">
-                50代女性、千葉と台北の2拠点生活。個人手配でアイスランドやイタリア等への旅歴あり。旅の醍醐味は食。B級から高級レストラン、郷土料理、伝統市場に興味あり。<br><br>
-                過去に掲示板で募集した際、価値観の違いや自分本位な行動にストレスを感じた経験から、最初から明確な規約を共有し、お互いを尊重し合える大人のグループを完全新規で立ち上げました。
-            </p>
+    <main>
+        <section>
+            <h2>👤 代表者紹介 ＆ 設立のきっかけ</h2>
+            <p>50代女性、千葉と台北の2拠点生活。個人手配でアイスランドやイタリア等への旅歴あり。旅の醍醐味は食。B級から高級レストラン、郷土料理、伝統市場に興味あり。</p>
+            <p>過去に掲示板で募集した際、価値観の違いや自分本位な行動にストレスを感じた経験から、最初から明確な規約を共有し、お互いを尊重し合える大人のグループを完全新規で立ち上げました。</p>
         </section>
 
-        <!-- 入会フロー -->
-        <section class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-            <h2 class="font-bold text-green-800 border-b pb-2 mb-3">📝 入会フロー ➔ Q&A</h2>
-            <p class="text-xs text-gray-600 leading-relaxed mb-3">①応募 ➔ ②メールで詳細規約確認 ➔ ③平日昼間に東京・千葉のカフェで対面ミーティング ➔ ④納得のうえ入会 ➔ ⑤複数回の対面相談を経て旅行計画</p>
-            <p class="text-xs text-green-900 font-bold bg-green-50 p-3 rounded-lg border border-green-200">Q. 会費はかかりますか？ ➔ A. 入会金・年会費は一切無料。各自の飲食代や旅行の実費（航空券やホテルの自己手配）のみです。</p>
+        <section>
+            <h2>📝 入会フロー ➔ Q&A</h2>
+            <p>①応募 ➔ ②メールで詳細規約確認 ➔ ③平日昼間に東京・千葉のカフェで対面ミーティング ➔ ④納得のうえ入会 ➔ ⑤複数回の対面相談を経て旅行計画</p>
+            <div class="qna-box">Q. 会費はかかりますか？ ➔ A. 入会金・年会費は一切無料。各自の飲食代や旅行の実費（航空券やホテルの自己手配）のみです。</div>
         </section>
 
-        <!-- 入力フォーム -->
-        <section class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-            <h2 class="text-xl font-bold text-center text-gray-800 mb-4">初期メンバー申請フォーム</h2>
-            <form action="#" method="POST" class="space-y-4" id="joinForm">
-                <div class="grid grid-cols-2 gap-4">
+        <section>
+            <h2 style="text-align: center; border: none; font-size: 20px; color: #333;">初期メンバー申請フォーム</h2>
+            <!-- ★【重要】ここの「#」の部分を、あとでFormspreeのURLに書き換えます -->
+            <form action="#" method="POST" id="joinForm">
+                <div class="form-grid">
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-gray-700">お名前（ニックネーム可）*</label>
-                        <input type="text" name="name" required class="w-full px-3 py-2 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <label>お名前（ニックネーム可）*</label>
+                        <input type="text" name="name" required placeholder="例: はなこ">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-gray-700">ご年齢（70歳未満限定）*</label>
-                        <input type="number" name="age" max="69" required class="w-full px-3 py-2 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <label>ご年齢（70歳未満限定）*</label>
+                        <input type="number" name="age" max="69" required placeholder="例: 55">
                     </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold mb-1 text-gray-700">お住まいの地域（市区町村まで ※一都三県限定）*</label>
-                    <input type="text" name="location" required class="w-full px-3 py-2 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="例：千葉県船橋市">
+                <div class="form-group">
+                    <label>お住まいの地域（市区町村まで ※一都三県限定）*</label>
+                    <input type="text" name="location" required placeholder="例：千葉県船橋市">
                 </div>
-                <div>
-                    <label class="block text-xs font-bold mb-1 text-gray-700">メールアドレス*</label>
-                    <input type="email" name="email" required class="w-full px-4 py-2 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <div class="form-group">
+                    <label>メールアドレス*</label>
+                    <input type="email" name="email" required>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold mb-1 text-gray-700">簡単な自己紹介・旅歴など*</label>
-                    <textarea name="intro" required rows="3" class="w-full px-4 py-2 text-xs rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-                </div>
-
-                <!-- 規約 -->
-                <div class="bg-stone-100 p-4 rounded-xl space-y-2 border border-gray-200">
-                    <h3 class="text-xs font-bold text-green-800 border-b pb-1 mb-2">【重要】入会資格への同意（すべてチェック必須）</h3>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>年齢70歳未満で、7日以上の長期旅行の予定を作れる。</label></div>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>代表者（千葉）の参加を前提とした一都三県メンバーの中間地点（東京または千葉の指定場所）での平日昼間の対面ミーティングに必ず参加できる（それ以外の場所やオンラインは不可）。</label></div>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>旅行会社に頼らず、自分で航空券やホテルのネット予約・手配ができる。</label></div>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>食事時の不公平な割り勘を行わず、一人だけが損をしない公平な精算に同意する。</label></div>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>相部屋でのルール（スマホ消音・減光、クローゼット公平利用等）や荷物量・買い物時間で仲間に負担をかけないマナーを含む詳細規約を厳守する。</label></div>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>一般的な社会マナー（ホテルの備品を持ち帰らない等）を厳守する。</label></div>
-                    <div class="flex items-start gap-2 text-xs text-gray-700"><input type="checkbox" class="rule-check mt-0.5"><label>自分の意見ばかり主張せず、常にメンバーとの調和や中間地点を考慮できる。</label></div>
+                <div class="form-group">
+                    <label>簡単な自己紹介・旅歴など*</label>
+                    <textarea name="intro" required rows="4"></textarea>
                 </div>
 
-                <!-- ボタン -->
-                <button type="submit" id="submitBtn" disabled class="w-full bg-gray-400 text-white font-bold py-3 rounded-lg cursor-not-allowed text-xs transition duration-200">すべての項目にチェックを入れてください</button>
+                <div class="rule-bg">
+                    <h3 class="rule-title">【重要】入会資格への同意（すべてチェック必須）</h3>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>年齢70歳未満で、7日以上の長期旅行の予定を作れる。</label></div>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>代表者（千葉）の参加を前提とした一都三県メンバーの中間地点（東京または千葉の指定場所）での平日昼間の対面ミーティングに必ず参加できる（それ以外の場所やオンラインは不可）。</label></div>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>旅行会社に頼らず、自分で航空券やホテルのネット予約・手配ができる。</label></div>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>食事時の不公平な割り勘を行わず、一人だけが損をしない公平な精算に同意する。</label></div>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>相部屋でのルール（スマホ消音・減光、クローゼット公平利用等）や荷物量・買い物時間で仲間に負担をかけないマナーを含む詳細規約を厳守する。</label></div>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>一般的な社会マナー（ホテルの備品を持ち帰らない等）を厳守する。</label></div>
+                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>自分の意見ばかり主張せず、常にメンバーとの調和や中間地点を考慮できる。</label></div>
+                </div>
+
+                <div class="form-group" style="margin-top: 20px;">
+                    <button type="submit" id="submitBtn" disabled>すべての項目にチェックを入れてください</button>
+                </div>
             </form>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-gray-400 text-center py-4 text-xs">
+    <footer>
         <p>&copy; 大人のコスパ自由旅グループ. All Rights Reserved.</p>
     </footer>
 
-    <!-- ボタンを動かすプログラム -->
     <script>
         const checkboxes = document.querySelectorAll('.rule-check');
         const submitBtn = document.getElementById('submitBtn');
@@ -90,12 +104,14 @@
                 const allChecked = Array.from(checkboxes).every(c => c.checked);
                 if (allChecked) {
                     submitBtn.disabled = false;
-                    submitBtn.className = "w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 rounded-lg text-xs cursor-pointer transition duration-200";
-                    submitBtn.innerText = "この内容で入会申請をする";
+                    submitBtn.style.backgroundColor = '#047857';
+                    submitBtn.style.cursor = 'pointer';
+                    submitBtn.innerText = 'この内容で入会申請をする';
                 } else {
                     submitBtn.disabled = true;
-                    submitBtn.className = "w-full bg-gray-400 text-white font-bold py-3 rounded-lg cursor-not-allowed text-xs transition duration-200";
-                    submitBtn.innerText = "すべての項目にチェックを入れてください";
+                    submitBtn.style.backgroundColor = '#a8a29e';
+                    submitBtn.style.cursor = 'not-allowed';
+                    submitBtn.innerText = 'すべての項目にチェックを入れてください';
                 }
             });
         });
