@@ -3,53 +3,557 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大人の自由旅グループ募集</title>
+    <title>賢い自由旅の会</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f5f5f4; color: #292524; font-family: sans-serif; margin: 0; padding: 0; }
-        header { background-color: #065f46; color: #ffffff; padding: 40px 20px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        h1 { margin: 0 0 10px 0; font-size: 28px; }
-        .sub-title { margin: 0; font-size: 14px; color: #d1fae5; }
-        main { max-width: 600px; margin: 30px auto; padding: 0 20px; }
-        section { background-color: #ffffff; padding: 25px; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e7e5e4; margin-bottom: 25px; }
-        h2 { margin: 0 0 15px 0; font-size: 18px; color: #065f46; border-bottom: 2px solid #e7e5e4; padding-bottom: 8px; }
-        p { font-size: 13px; line-height: 1.6; margin: 0 0 15px 0; }
-        .qna-box { background-color: #ecfdf5; padding: 15px; border-radius: 8px; border: 1px solid #a7f3d0; color: #065f46; font-weight: bold; font-size: 13px; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-        label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px; color: #444; }
-        input[type="text"], input[type="number"], input[type="email"], textarea { width: 100%; padding: 10px; font-size: 13px; border-radius: 8px; border: 1px solid #d1d5db; box-sizing: border-box; }
-        .form-group { margin-bottom: 15px; }
-        .rule-bg { background-color: #f5f5f4; padding: 20px; border-radius: 12px; border: 1px solid #e7e5e4; }
-        .rule-title { font-size: 13px; font-weight: bold; color: #065f46; border-bottom: 1px solid #d6d3d1; padding-bottom: 5px; margin: 0 0 15px 0; }
-        .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 12px; color: #444; line-height: 1.5; }
-        .checkbox-group input { margin-top: 3px; }
-        footer { background-color: #1f2937; color: #9ca3af; text-align: center; padding: 20px; font-size: 12px; margin-top: 50px; }
-        button { width: 100%; padding: 14px; font-size: 13px; font-weight: bold; border-radius: 8px; border: none; cursor: not-allowed; background-color: #a8a29e; color: #ffffff; transition: 0.2s; }
+        :root {
+            --cream: #f8f5ef;
+            --cream-dark: #ede9e0;
+            --warm-white: #faf9f7;
+            --gold: #b89a6a;
+            --gold-light: #d4b98a;
+            --gold-dark: #8a6f45;
+            --forest: #2c4a3e;
+            --forest-mid: #3d6655;
+            --forest-light: #5a8a72;
+            --charcoal: #292524;
+            --ink: #292524;
+            --muted: #292524;
+            --border: rgba(184,154,106,0.25);
+            --border-soft: rgba(44,74,62,0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            background-color: #1e3830;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 30px 60px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cdefs%3E%3Cpattern id='tile' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='none' stroke='%23b89a6a' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Ccircle cx='40' cy='40' r='10' fill='none' stroke='%23b89a6a' stroke-width='0.5' stroke-opacity='0.2'/%3E%3Ccircle cx='0' cy='0' r='5' fill='none' stroke='%23b89a6a' stroke-width='0.5' stroke-opacity='0.15'/%3E%3Ccircle cx='80' cy='0' r='5' fill='none' stroke='%23b89a6a' stroke-width='0.5' stroke-opacity='0.15'/%3E%3Ccircle cx='0' cy='80' r='5' fill='none' stroke='%23b89a6a' stroke-width='0.5' stroke-opacity='0.15'/%3E%3Ccircle cx='80' cy='80' r='5' fill='none' stroke='%23b89a6a' stroke-width='0.5' stroke-opacity='0.15'/%3E%3Cpath d='M40 20 L60 40 L40 60 L20 40 Z' fill='none' stroke='%23b89a6a' stroke-width='0.4' stroke-opacity='0.18'/%3E%3Cpath d='M0 40 L10 30 L10 50 Z' fill='none' stroke='%23d4b98a' stroke-width='0.4' stroke-opacity='0.12'/%3E%3Cpath d='M80 40 L70 30 L70 50 Z' fill='none' stroke='%23d4b98a' stroke-width='0.4' stroke-opacity='0.12'/%3E%3Cpath d='M40 0 L50 10 L30 10 Z' fill='none' stroke='%23d4b98a' stroke-width='0.4' stroke-opacity='0.12'/%3E%3Cpath d='M40 80 L50 70 L30 70 Z' fill='none' stroke='%23d4b98a' stroke-width='0.4' stroke-opacity='0.12'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23tile)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(30,56,48,0.0) 0%, rgba(15,28,24,0.55) 100%);
+            pointer-events: none;
+        }
+
+        .hero-ornament {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            letter-spacing: 0.35em;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.2s forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(26px, 5vw, 42px);
+            color: #f5f0e8;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.4s forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+            margin: 22px auto;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.5s forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            color: rgba(245,240,232,0.65);
+            letter-spacing: 0.12em;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.6s forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-rose {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.06;
+            bottom: -10px;
+            right: 40px;
+            font-family: serif;
+            transform: rotate(15deg);
+            z-index: 1;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ─── MAIN ─── */
+        main {
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 50px 24px 80px;
+        }
+
+        /* ─── CARD ─── */
+        .card {
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 36px 38px;
+            margin-bottom: 28px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .card.visible { opacity: 1; transform: translateY(0); }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--forest-light), var(--forest));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #292524;
+            letter-spacing: 0.06em;
+        }
+
+        p {
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: #292524;
+            margin-bottom: 14px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        /* ─── FLOW ─── */
+        .flow {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .flow-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            color: var(--gold-dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flow-label {
+            font-size: 10.5px;
+            color: #292524;
+            letter-spacing: 0.04em;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .flow-arrow {
+            color: var(--gold-light);
+            font-size: 12px;
+            padding: 0 6px;
+            padding-bottom: 18px;
+            opacity: 0.7;
+        }
+
+        /* ─── QNA ─── */
+        .qna-box {
+            background: linear-gradient(135deg, #f0f7f3, #e8f3ee);
+            border: 1px solid rgba(61,102,85,0.2);
+            border-left: 3px solid var(--forest-light);
+            border-radius: 2px;
+            padding: 16px 18px;
+            font-size: 13px;
+            color: #292524;
+            line-height: 1.75;
+        }
+
+        .qna-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            color: var(--forest-light);
+            display: block;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        /* ─── FORM SECTION TITLE ─── */
+        .form-section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-section-title .en {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            letter-spacing: 0.35em;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-section-title .ja {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #292524;
+            letter-spacing: 0.06em;
+        }
+
+        /* ─── FORM ─── */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+
+        .form-group { margin-bottom: 18px; }
+
+        label {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: var(--ink);
+            margin-bottom: 7px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 11px 14px;
+            font-size: 13px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+            color: #292524;
+            background: var(--cream);
+            border: 1px solid rgba(184,154,106,0.3);
+            border-radius: 2px;
+            outline: none;
+            transition: border-color 0.25s, background 0.25s;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--forest-light);
+            background: #fff;
+        }
+
+        input::placeholder, textarea::placeholder { color: rgba(122,114,104,0.5); }
+
+        textarea { resize: vertical; }
+
+        /* ─── RULES ─── */
+        .rule-bg {
+            background: var(--cream-dark);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 24px 26px;
+            margin: 24px 0;
+        }
+
+        .rule-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(184,154,106,0.2);
+        }
+
+        .rule-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        .rule-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            color: var(--charcoal);
+            text-transform: uppercase;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 2px;
+            border: 1px solid transparent;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .checkbox-group:hover { border-color: rgba(184,154,106,0.2); background: rgba(255,255,255,0.8); }
+
+        .checkbox-group.checked { border-color: rgba(61,102,85,0.25); background: rgba(240,247,243,0.8); }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 3px;
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            accent-color: var(--forest);
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 12px;
+            line-height: 1.65;
+            color: var(--charcoal);
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        /* ─── BUTTON ─── */
+        .btn-wrap { margin-top: 28px; }
+
+        button#submitBtn {
+            width: 100%;
+            padding: 16px 24px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13.5px;
+            letter-spacing: 0.15em;
+            border: none;
+            border-radius: 2px;
+            cursor: not-allowed;
+            background: #c0bab2;
+            color: #fff;
+            transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button#submitBtn.ready {
+            background: linear-gradient(135deg, var(--forest-mid), var(--forest));
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(44,74,62,0.25);
+        }
+
+        button#submitBtn.ready:hover {
+            background: linear-gradient(135deg, var(--forest-light), var(--forest-mid));
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(44,74,62,0.35);
+        }
+
+        button#submitBtn.ready:active { transform: translateY(0); }
+
+        button#submitBtn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        button#submitBtn.ready:hover::after { transform: translateX(100%); }
+
+        /* ─── PROGRESS ─── */
+        .progress-wrap {
+            margin-bottom: 10px;
+        }
+
+        .progress-label {
+            font-size: 11px;
+            color: var(--ink);
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            height: 2px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--forest-light), var(--gold));
+            width: 0%;
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--charcoal);
+            color: rgba(245,240,232,0.35);
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+        }
+
+        .footer-rose {
+            font-size: 18px;
+            opacity: 0.4;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 520px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .card { padding: 26px 22px; }
+            .flow { gap: 0; }
+            .flow-arrow { padding: 0 3px; font-size: 10px; }
+            .flow-label { font-size: 9.5px; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>大人のコスパ自由旅グループ</h1>
-        <p class="sub-title">平日昼間に対面で相談して創り上げる旅仲間募集</p>
+    <header class="hero">
+        <div class="hero-ornament">The Discerning Traveler</div>
+        <h1>賢い自由旅の会</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-sub">平日昼間に対面で相談して創り上げる旅仲間募集</p>
+        <div class="hero-rose">🌹</div>
     </header>
 
     <main>
-        <section>
-            <!-- アイコンを人影から美しい薔薇のマークに変更しました -->
-            <h2>🌹 代表者紹介 ＆ 設立のきっかけ</h2>
+
+        <!-- 代表者紹介 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🌹</div>
+                <div class="card-title">代表者紹介 ＆ 設立のきっかけ</div>
+            </div>
             <p>50代女性、千葉と台北の2拠点生活。個人手配でアイスランドやイタリア等への旅歴あり。旅の醍醐味は食。B級から高級レストラン、郷土料理、伝統市場に興味あり。</p>
             <p>過去に掲示板で募集した際、価値観の違いや自分本位な行動にストレスを感じた経験から、最初から明確な規約を共有し、お互いを尊重し合える大人のグループを完全新規で立ち上げました。</p>
-        </section>
+        </div>
 
-        <section>
-            <h2>📝 入会フロー ➔ Q&A</h2>
-            <p>①応募 ➔ ②メールで詳細規約確認 ➔ ③平日昼間に東京・千葉のカフェで対面ミーティング ➔ ④納得のうえ入会 ➔ ⑤複数回の対面相談を経て旅行計画</p>
-            <div class="qna-box">Q. 会費はかかりますか？ ➔ A. 入会金・年会費は一切無料。各自の飲食代や旅行の実費（航空券やホテルの自己手配）のみです。</div>
-        </section>
+        <!-- 入会フロー -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">✦</div>
+                <div class="card-title">入会フロー ＆ よくあるご質問</div>
+            </div>
 
-        <section>
-            <h2 style="text-align: center; border: none; font-size: 20px; color: #333;">初期メンバー申請フォーム</h2>
-            <!-- ★【重要】ここの action="〜" の中身を、あなたのFormspreeのURLに書き換えてください -->
+            <div class="flow">
+                <div class="flow-step">
+                    <div class="flow-num">①</div>
+                    <div class="flow-label">応募</div>
+                </div>
+                <div class="flow-arrow">›</div>
+                <div class="flow-step">
+                    <div class="flow-num">②</div>
+                    <div class="flow-label">規約確認</div>
+                </div>
+                <div class="flow-arrow">›</div>
+                <div class="flow-step">
+                    <div class="flow-num">③</div>
+                    <div class="flow-label">対面MT</div>
+                </div>
+                <div class="flow-arrow">›</div>
+                <div class="flow-step">
+                    <div class="flow-num">④</div>
+                    <div class="flow-label">入会</div>
+                </div>
+                <div class="flow-arrow">›</div>
+                <div class="flow-step">
+                    <div class="flow-num">⑤</div>
+                    <div class="flow-label">旅行計画</div>
+                </div>
+            </div>
+
+            <div class="qna-box">
+                <span class="qna-label">Q &amp; A</span>
+                会費はかかりますか？ — 入会金・年会費は一切無料。各自の飲食代や旅行の実費（航空券・ホテルの自己手配）のみです。
+            </div>
+        </div>
+
+        <!-- フォーム -->
+        <div class="card">
+            <div class="form-section-title">
+                <span class="en">Membership Application</span>
+                <span class="ja">初期メンバー申請フォーム</span>
+            </div>
+
             <form action="https://formspree.io/f/mykazvon" method="POST" id="joinForm">
                 <div class="form-grid">
                     <div>
@@ -57,62 +561,121 @@
                         <input type="text" name="name" required placeholder="例: はなこ">
                     </div>
                     <div>
-                        <label>ご年齢（70歳未満限定）*</label>
+                        <label>ご年齢（70歳未満）*</label>
                         <input type="number" name="age" max="69" required placeholder="例: 55">
                     </div>
                 </div>
+
                 <div class="form-group">
-                    <label>お住まいの地域（市区町村まで ※一都三県限定）*</label>
+                    <label>お住まいの地域（市区町村まで ／ 一都三県限定）*</label>
                     <input type="text" name="location" required placeholder="例：千葉県船橋市">
                 </div>
+
                 <div class="form-group">
-                    <label>メールアドレス*</label>
-                    <input type="email" name="email" required>
+                    <label>メールアドレス *</label>
+                    <input type="email" name="email" required placeholder="example@mail.com">
                 </div>
+
                 <div class="form-group">
-                    <label>簡単な自己紹介・旅歴など*</label>
-                    <textarea name="intro" required rows="4"></textarea>
+                    <label>簡単な自己紹介・旅歴など *</label>
+                    <textarea name="intro" required rows="4" placeholder="旅の好みやこれまでの旅先などを自由にお書きください"></textarea>
                 </div>
 
                 <div class="rule-bg">
-                    <h3 class="rule-title">【重要】入会資格への同意（すべてチェック必須）</h3>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>年齢70歳未満で、7日以上の長期旅行の予定を作れる。</label></div>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>代表者（千葉）の参加を前提とした一都三県メンバーの中間地点（東京または千葉の指定場所）での平日昼間の対面ミーティングに必ず参加できる（それ以外の場所やオンラインは不可）。</label></div>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>旅行会社に頼らず、自分で航空券やホテルのネット予約・手配ができる。</label></div>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>食事時の不公平な割り勘を行わず、一人だけが損をしない公平な精算に同意する。</label></div>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>相部屋でのルール（スマホ消音・減光、クローゼット公平利用等）や荷物量・買い物時間で仲間に負担をかけないマナーを含む詳細規約を厳守する。</label></div>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>一般的な社会マナー（ホテルの備品を持ち帰らない等）を厳守する。</label></div>
-                    <div class="checkbox-group"><input type="checkbox" class="rule-check"><label>自分の意見ばかり主張せず、常にメンバーとの調和や中間地点を考慮できる。</label></div>
+                    <div class="rule-header">
+                        <div class="rule-dot"></div>
+                        <div class="rule-title">入会資格への同意事項（全項目必須）</div>
+                    </div>
+
+                    <div class="checkbox-group" id="cg0">
+                        <input type="checkbox" class="rule-check" id="c0">
+                        <label for="c0">年齢70歳未満で、7日以上の長期旅行の予定を作れる。</label>
+                    </div>
+                    <div class="checkbox-group" id="cg1">
+                        <input type="checkbox" class="rule-check" id="c1">
+                        <label for="c1">代表者（千葉）の参加を前提とした一都三県メンバーの中間地点（東京または千葉の指定場所）での平日昼間の対面ミーティングに必ず参加できる（それ以外の場所やオンラインは不可）。</label>
+                    </div>
+                    <div class="checkbox-group" id="cg2">
+                        <input type="checkbox" class="rule-check" id="c2">
+                        <label for="c2">旅行会社に頼らず、自分で航空券やホテルのネット予約・手配ができる。</label>
+                    </div>
+                    <div class="checkbox-group" id="cg3">
+                        <input type="checkbox" class="rule-check" id="c3">
+                        <label for="c3">食事時の不公平な割り勘を行わず、一人だけが損をしない公平な精算に同意する。</label>
+                    </div>
+                    <div class="checkbox-group" id="cg4">
+                        <input type="checkbox" class="rule-check" id="c4">
+                        <label for="c4">相部屋でのルール（スマホ消音・減光、クローゼット公平利用等）や荷物量・買い物時間で仲間に負担をかけないマナーを含む詳細規約を厳守する。</label>
+                    </div>
+                    <div class="checkbox-group" id="cg5">
+                        <input type="checkbox" class="rule-check" id="c5">
+                        <label for="c5">一般的な社会マナー（ホテルの備品を持ち帰らない等）を厳守する。</label>
+                    </div>
+                    <div class="checkbox-group" id="cg6">
+                        <input type="checkbox" class="rule-check" id="c6">
+                        <label for="c6">自分の意見ばかり主張せず、常にメンバーとの調和や中間地点を考慮できる。</label>
+                    </div>
+
+                    <div class="progress-wrap" style="margin-top: 18px;">
+                        <div class="progress-label">
+                            <span>同意の進捗</span>
+                            <span id="progress-count">0 / 7</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group" style="margin-top: 20px;">
+                <div class="btn-wrap">
                     <button type="submit" id="submitBtn" disabled>すべての項目にチェックを入れてください</button>
                 </div>
             </form>
-        </section>
+        </div>
+
     </main>
 
     <footer>
-        <p>&copy; 大人のコスパ自由旅グループ. All Rights Reserved.</p>
+        <span class="footer-rose">🌹</span>
+        <p>&copy; 大人のコスパ自由旅グループ &ensp;All Rights Reserved.</p>
     </footer>
 
     <script>
+        // Scroll animation
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 100);
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        cards.forEach(c => observer.observe(c));
+
+        // Checkbox logic
         const checkboxes = document.querySelectorAll('.rule-check');
         const submitBtn = document.getElementById('submitBtn');
-        checkboxes.forEach(cb => {
+        const progressFill = document.getElementById('progress-fill');
+        const progressCount = document.getElementById('progress-count');
+
+        checkboxes.forEach((cb, i) => {
             cb.addEventListener('change', () => {
-                const allChecked = Array.from(checkboxes).every(c => c.checked);
-                if (allChecked) {
-                    submitBtn.disabled = false;
-                    submitBtn.style.backgroundColor = '#047857';
-                    submitBtn.style.cursor = 'pointer';
-                    submitBtn.innerText = 'この内容で入会申請をする';
-                } else {
-                    submitBtn.disabled = true;
-                    submitBtn.style.backgroundColor = '#a8a29e';
-                    submitBtn.style.cursor = 'not-allowed';
-                    submitBtn.innerText = 'すべての項目にチェックを入れてください';
-                }
+                const parent = document.getElementById('cg' + i);
+                if (cb.checked) parent.classList.add('checked');
+                else parent.classList.remove('checked');
+
+                const checkedCount = Array.from(checkboxes).filter(c => c.checked).length;
+                const total = checkboxes.length;
+                progressFill.style.width = (checkedCount / total * 100) + '%';
+                progressCount.textContent = checkedCount + ' / ' + total;
+
+                const allChecked = checkedCount === total;
+                submitBtn.disabled = !allChecked;
+                submitBtn.classList.toggle('ready', allChecked);
+                submitBtn.textContent = allChecked
+                    ? 'この内容で入会申請をする'
+                    : 'すべての項目にチェックを入れてください';
             });
         });
     </script>
