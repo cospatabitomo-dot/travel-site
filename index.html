@@ -3,7 +3,9 @@
 <head><meta name="google-site-verification" content="V1U6AZS2YrQY9XW2uBRWZw2QkA7FWSzHuuVFWeYlahA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>賢い自由旅の会</title>
+    <title>旅友・旅仲間募集｜賢い自由旅の会（東京・千葉）</title>
+    <meta name="description" content="旅友・旅仲間を募集しています。平日昼間に対面（東京か千葉）で相談して旅行を創り上げるグループです。航空券の安い時期に7日以上の旅行に行ける方、ご年齢70歳未満の方を歓迎します。">
+    <meta name="keywords" content="旅友,旅仲間,旅仲間募集,旅友募集,旅行仲間,旅行友達,東京,千葉,平日旅行,旅仲間探し">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -184,6 +186,72 @@
             margin-bottom: 14px;
         }
         p:last-child { margin-bottom: 0; }
+
+        /* ─── 募集条件リスト ─── */
+        .conditions-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px 0;
+        }
+
+        .conditions-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-soft);
+            font-size: 15px;
+            line-height: 1.75;
+            color: #292524;
+        }
+
+        .conditions-list li:first-child {
+            padding-top: 0;
+        }
+
+        .conditions-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .cond-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            color: var(--gold-dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ─── 問いかけエリア ─── */
+        .invitation-box {
+            background: linear-gradient(135deg, #f0f7f3, #e8f3ee);
+            border: 1px solid rgba(61,102,85,0.2);
+            border-left: 3px solid var(--forest-light);
+            border-radius: 2px;
+            padding: 22px 24px;
+            margin-top: 8px;
+        }
+
+        .invitation-box p {
+            font-size: 15px;
+            line-height: 1.85;
+            color: #292524;
+            margin-bottom: 0;
+        }
+
+        .invitation-box .invite-lead {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--forest);
+            margin-bottom: 8px;
+        }
 
         /* ─── FLOW ─── */
         .flow {
@@ -435,9 +503,7 @@
         button#submitBtn.ready:hover::after { transform: translateX(100%); }
 
         /* ─── PROGRESS ─── */
-        .progress-wrap {
-            margin-bottom: 10px;
-        }
+        .progress-wrap { margin-bottom: 10px; }
 
         .progress-label {
             font-size: 13px;
@@ -463,6 +529,37 @@
             border-radius: 2px;
             transition: width 0.4s ease;
         }
+
+        /* ─── 代表者紹介（目立たせない） ─── */
+        .profile-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .profile-section.visible { opacity: 1; transform: translateY(0); }
+
+        .profile-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            letter-spacing: 0.35em;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .profile-text {
+            font-size: 14px;
+            line-height: 1.85;
+            color: #6b6560;
+            margin-bottom: 10px;
+        }
+
+        .profile-text:last-child { margin-bottom: 0; }
 
         /* ─── FOOTER ─── */
         footer {
@@ -496,26 +593,52 @@
         <div class="hero-ornament">The Discerning Traveler</div>
         <h1>賢い自由旅の会</h1>
         <div class="hero-divider"></div>
-        <p class="hero-sub">平日昼間に対面で相談して創り上げる旅仲間募集</p>
+        <p class="hero-sub">平日昼間に対面（東京か千葉）で相談して創り上げる旅仲間募集</p>
         <div class="hero-rose">🌹</div>
     </header>
 
     <main>
 
-        <!-- 代表者紹介 -->
+        <!-- 募集条件 -->
         <div class="card">
             <div class="card-header">
-                <div class="card-icon">🌹</div>
-                <div class="card-title">代表者紹介 ＆ 設立のきっかけ</div>
+                <div class="card-icon">✦</div>
+                <div class="card-title">こんな方を旅友として探しています</div>
             </div>
-            <p>50代女性、千葉と台北の2拠点生活。個人手配でアイスランドやイタリア等への旅歴あり。旅の醍醐味は食。B級から高級レストラン、郷土料理、伝統市場に興味あり。</p>
-            <p>過去に掲示板で募集した際、価値観の違いや自分本位な行動にストレスを感じた経験から、最初から明確な規約を共有し、お互いを尊重し合える大人のグループを完全新規で立ち上げました。</p>
+
+            <ul class="conditions-list">
+                <li>
+                    <div class="cond-icon">1</div>
+                    <span>旅の友達や仲間が欲しい方</span>
+                </li>
+                <li>
+                    <div class="cond-icon">2</div>
+                    <span>旅の計画を平日昼間に対面（東京または千葉）で話し合って決められる方</span>
+                </li>
+                <li>
+                    <div class="cond-icon">3</div>
+                    <span>航空券やホテルの予約をご自身でできる方</span>
+                </li>
+                <li>
+                    <div class="cond-icon">4</div>
+                    <span>祝日とは関係なく、航空券の安い時期に7日以上の旅行に行くことができる方</span>
+                </li>
+                <li>
+                    <div class="cond-icon">5</div>
+                    <span>ご年齢が70歳未満の方</span>
+                </li>
+            </ul>
+
+            <div class="invitation-box">
+                <p class="invite-lead">すべてに当てはまる方、旅仲間になりませんか？</p>
+                <p>一緒に旅の計画を立てて、自分たちだけの旅を創り上げましょう。下のフォームからご応募いただけます。</p>
+            </div>
         </div>
 
         <!-- 入会フロー -->
         <div class="card">
             <div class="card-header">
-                <div class="card-icon">✦</div>
+                <div class="card-icon">›</div>
                 <div class="card-title">入会フロー ＆ よくあるご質問</div>
             </div>
 
@@ -638,6 +761,13 @@
             </form>
         </div>
 
+        <!-- 代表者紹介（目立たせない） -->
+        <div class="profile-section" id="profileSection">
+            <span class="profile-label">About the organizer</span>
+            <p class="profile-text">50代女性、千葉と台北の2拠点生活。個人手配でアイスランドやイタリア等への旅歴あり。旅の醍醐味は食。B級から高級レストラン、郷土料理、伝統市場に興味あり。</p>
+            <p class="profile-text">過去に掲示板で募集した際、価値観の違いや自分本位な行動にストレスを感じた経験から、最初から明確な規約を共有し、お互いを尊重し合える大人のグループを完全新規で立ち上げました。</p>
+        </div>
+
     </main>
 
     <footer>
@@ -646,7 +776,7 @@
     </footer>
 
     <script>
-        // Scroll animation
+        // Scroll animation for cards
         const cards = document.querySelectorAll('.card');
         const observer = new IntersectionObserver(entries => {
             entries.forEach((e, i) => {
@@ -657,6 +787,18 @@
             });
         }, { threshold: 0.08 });
         cards.forEach(c => observer.observe(c));
+
+        // Scroll animation for profile
+        const profileSection = document.getElementById('profileSection');
+        const profileObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    profileObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        profileObserver.observe(profileSection);
 
         // Checkbox logic
         const checkboxes = document.querySelectorAll('.rule-check');
